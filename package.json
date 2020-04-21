@@ -3,15 +3,37 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start": "cross-env NODE_ENV=modern webpack",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
   "dependencies": {
+    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "prettier": "^2.0.4",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "ie 10"
+    ],
+    "modern": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ],
+    "ssr": [
+      "node 12"
+    ]
   }
 }
