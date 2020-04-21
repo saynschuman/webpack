@@ -1,8 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-
-const App = () => (
-  <button onClick={() => console.log("click")}>click me</button>
-);
+import App from "./App";
 
 render(<App />, document.getElementById("root"));
