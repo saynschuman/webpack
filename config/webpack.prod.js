@@ -3,12 +3,17 @@ const commonConfig = require("./webpack.common");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const paths = require("./path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 const prodConfig = {
   entry: paths.entryMain,
   mode: "production",
   devtool: "inline-source-map",
-  plugins: [new MiniCssExtractPlugin(), new CleanWebpackPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin({ analyzerMode: "disabled" }),
+  ],
   output: {
     filename: "[name].[contenthash].js",
     chunkFilename: "[name].[contenthash].js",
@@ -45,6 +50,11 @@ const prodConfig = {
         ],
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
   },
 };
 

@@ -5,6 +5,9 @@ const devConfig = {
   devServer: {
     port: 3000,
     hot: true,
+    stats: {
+      modules: false,
+    },
   },
   mode: "development",
   resolve: {

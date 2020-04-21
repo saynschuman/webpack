@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const paths = require("./path");
+const webpack = require("webpack");
 
 const commonConfig = {
   entry: ["react-hot-loader/patch", paths.entryMain],
@@ -9,7 +10,10 @@ const commonConfig = {
     path: paths.absolute.dist,
     publicPath: "/",
   },
-  plugins: [new HtmlWebpackPlugin({ template: paths.htmlTemplate })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: paths.htmlTemplate }),
+    new webpack.ProgressPlugin(),
+  ],
   module: {
     rules: [
       {
