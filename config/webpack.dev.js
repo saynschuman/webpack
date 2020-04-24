@@ -8,6 +8,13 @@ const devConfig = {
     stats: {
       modules: false,
     },
+    proxy: {
+      "/api/v1/": {
+        target: "http://lms-dev.pakhomov.im/",
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
   mode: "development",
   resolve: {
