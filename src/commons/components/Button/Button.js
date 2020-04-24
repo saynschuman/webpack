@@ -15,6 +15,7 @@ type Props = {
   padding?: string,
   width?: string,
   height?: string,
+  onClick?: () => void,
 };
 
 const Wrapper: React.ComponentType<Props> = styled.button`
