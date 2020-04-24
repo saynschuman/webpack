@@ -1,18 +1,34 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+// @flow
 
-const Wrapper = styled.button`
-  color: ${({ color }) => color};
-  background: ${({ background }) => background};
-  border-radius: ${({ borderRadius }) => borderRadius}px;
-  font-size: ${({ fontSize }) => fontSize}px;
-  border: ${({ border }) => border};
-  padding: ${({ padding }) => padding};
-  height: ${({ height }) => height};
-  width: ${({ width }) => width};
-  cursor: pointer;
-  text-transform: ${({ textTransform }) => textTransform};
+import * as React from "react";
+import styled from "styled-components";
+
+type Props = {
+  disabled?: boolean,
+  textTransform?: string,
+  background?: string,
+  borderRadius?: number,
+  children: React.Node,
+  color?: string,
+  fontSize?: number,
+  border?: string,
+  padding?: string,
+  width?: string,
+  height?: string,
+};
+
+const Wrapper: React.ComponentType<Props> = styled.button`
+  color: ${({ color }) => (!!color ? color : "#000")};
+  background: ${({ background }) => (!!background ? background : "buttonface")};
+  border-radius: ${({ borderRadius }) => (!!borderRadius ? borderRadius : 3)}px;
+  font-size: ${({ fontSize }) => (!!fontSize ? fontSize : 14)}px;
+  border: ${({ border }) => (!!border ? border : "1px solid #999")};
+  padding: ${({ padding }) => (!!padding ? padding : "5px")};
+  height: ${({ height }) => (!!height ? height : "auto")};
+  width: ${({ width }) => (!!width ? width : "auto")};
+  cursor: ${({ cursor }) => (!!cursor ? cursor : "pointer")};
+  text-transform: ${({ textTransform }) =>
+    !!textTransform ? textTransform : "none"};
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -22,22 +38,8 @@ const Wrapper = styled.button`
   }
 `;
 
-const Button = (props) => {
+const Button = (props: Props) => {
   return <Wrapper {...props}>{props.children}</Wrapper>;
-};
-
-Button.propTypes = {
-  disabled: PropTypes.bool,
-  textTransform: PropTypes.string,
-  background: PropTypes.string,
-  borderRadius: PropTypes.number,
-  children: PropTypes.node,
-  color: PropTypes.string,
-  fontSize: PropTypes.number,
-  border: PropTypes.string,
-  padding: PropTypes.string,
-  width: PropTypes.string,
-  height: PropTypes.string,
 };
 
 export default Button;
