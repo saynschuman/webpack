@@ -38,7 +38,7 @@ const Wrapper: React.ComponentType<Props> = styled.button`
   }
 `;
 
-const Button = (props: Props) => {
+const Button = (props: Props): React.Node => {
   return <Wrapper {...props}>{props.children}</Wrapper>;
 };
 
