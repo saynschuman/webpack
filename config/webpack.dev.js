@@ -8,6 +8,7 @@ const devConfig = {
     stats: {
       modules: false,
     },
+    historyApiFallback: true,
     proxy: {
       "/api/v1/": {
         target: "http://lms-dev.pakhomov.im/",
