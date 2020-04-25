@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch, withRouter } from "react-router-dom";
 import allRoutes from "../features/routes";
 import checkToken from "../commons/utils/checkToken";
+import Wrapper from "./components/Wrapper";
 
 const Root = ({ history }) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Root = ({ history }) => {
   }, []);
 
   return (
-    <>
+    <Wrapper>
       <Switch>
         {routes.map((route, index) => (
           <Route
@@ -24,7 +25,7 @@ const Root = ({ history }) => {
           />
         ))}
       </Switch>
-    </>
+    </Wrapper>
   );
 };
 

@@ -1,54 +1,44 @@
 import React from "react";
-import logo from "./img/logo.svg";
-import phone from "./img/phone.png";
-import mail from "./img/mail.png";
-import out from "./img/out.png";
+import { Link } from "react-router-dom";
+import logoImg from "./img/logo.svg";
+import styles from "./Header.module.scss";
+import PhoneNumber from "./components/PhoneNumber/PhoneNumber";
+import Email from "./components/Email/Email";
+import LogOut from "./components/LogOut/LogOut";
+import { clientAPI } from "src/commons/api/client";
 
-const content = {
-  logo: {
-    src: logo,
-    alt: "logo",
-  },
-  phone: {
-    icon: phone,
-    alt: "phone",
-    text: "+7(795663-71-07)",
-  },
-  email: {
-    icon: mail,
-    alt: "email",
-    text: "support@promrg.ru",
-  },
-  user: {
-    fullName: "Быковская Мария Евгеньевна",
-    company: "Быковская Мария Евгеньевна",
-    iconOut: out,
-    alt: "out",
-  },
-};
+const Header = (props) => {
+  const logout = () => {
+    console.log("logOut");
+  };
 
-const Header = () => {
+  const loadUser = async () => {
+    const activeUser = await clientAPI.user.getActiveUser();
+  };
+
+  React.useEffect(() => {
+    loadUser();
+  }, []);
+
   return (
-    <div>
-      <div>
-        <img src={content.logo.src} alt={content.logo.alt} />
-      </div>
-      <div>
-        <img src={content.email.icon} alt={content.email.alt} />
-        {content.email.text}
-      </div>
-      <div>
-        <img src={content.phone.icon} alt={content.phone.alt} />
-        {content.phone.text}
-      </div>
-      <div>
-        <div>
-          <div>{content.user.fullName}</div>
+    <div className={styles.HeaderWrapper}>
+      <div className={styles.Header}>
+        <Link to="/">
+          <img className={styles.logoImg} src={logoImg} alt="logo" />
+        </Link>
+        <PhoneNumber />
+        <Email />
+        <div className={styles.HeaderItem}>
           <div>
-            <img src={content.user.iconOut} alt={content.user.alt} />
+            <div className={styles.HeaderItemName}>firstName lastName</div>
+            <div className={styles.HeaderItemCompany}>
+              props.activeUser.company_title
+            </div>
+          </div>
+          <div onClick={logout}>
+            <LogOut />
           </div>
         </div>
-        <div>{content.user.company}</div>
       </div>
     </div>
   );
