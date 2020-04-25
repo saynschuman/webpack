@@ -5,13 +5,16 @@ import App from "./App";
 import store from "./store";
 import rootSaga from "./store/sagas";
 import "./commons/utils/interceptors";
+import { BrowserRouter } from "react-router-dom";
 
 store.runSaga(rootSaga);
 
 render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

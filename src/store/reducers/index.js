@@ -1,3 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
+import activeUser from "../../features/client/store/reducers";
 
-export default combineReducers({ test: () => 'test' });
+export default combineReducers({ activeUser });

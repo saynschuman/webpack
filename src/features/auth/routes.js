@@ -1,12 +1,14 @@
 import { FEATURE } from "./config";
-import LoginPage from "./components/pages/LoginPage/LoginPage";
+import LoginPage from "./components/pages/LoginPage";
 
-export const PAGE_LOGIN = `${FEATURE}_login`;
+const PATH = "/login";
+
+export const PAGE_LOGIN = FEATURE + PATH;
 
 const routes = {
   [PAGE_LOGIN]: {
     name: PAGE_LOGIN,
-    path: `/login`,
+    path: PATH,
     pageComponent: LoginPage,
     isNeedAuth: false,
   },
