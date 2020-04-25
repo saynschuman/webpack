@@ -2,7 +2,7 @@ import ClientPage from "./pages/ClientPage";
 
 const routes = {
   client: {
-    path: "/client",
+    path: "/courses",
     pageComponent: ClientPage,
   },
 };
