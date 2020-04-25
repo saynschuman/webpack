@@ -10,6 +10,12 @@ const commonConfig = {
     path: paths.absolute.dist,
     publicPath: "/",
   },
+  resolve: {
+    alias: {
+      src: paths.absolute.src,
+    },
+    extensions: [".js", ".jsx", ".scss", ".css"],
+  },
   plugins: [
     new HtmlWebpackPlugin({ template: paths.htmlTemplate }),
     new webpack.ProgressPlugin(),

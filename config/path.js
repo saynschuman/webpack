@@ -7,6 +7,7 @@ const configPaths = {
   htmlTemplate: path.resolve(rootDir, "public/template.html"),
   absolute: {
     dist: path.resolve(rootDir, "dist"),
+    src: path.resolve(rootDir, "src"),
   },
 };
 

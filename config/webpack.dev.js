@@ -20,6 +20,7 @@ const devConfig = {
   mode: "development",
   resolve: {
     alias: {
+      ...commonConfig.resolve.alias,
       "react-dom": "@hot-loader/react-dom",
     },
   },
