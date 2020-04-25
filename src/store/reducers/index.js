@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import activeUser from "../../features/client/store/reducers";
+import tokenInfo from "../../root/store/reducers";
 
-export default combineReducers({ activeUser });
+export default combineReducers({ tokenInfo });

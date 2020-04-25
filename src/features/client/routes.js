@@ -1,16 +1,9 @@
-import { FEATURE } from "./config";
-import ClientPage from "./components/pages/ClientPage";
-
-const PATH = "/client";
-
-export const PAGE_MAIN = FEATURE + PATH;
+import ClientPage from "./pages/ClientPage";
 
 const routes = {
-  [PAGE_MAIN]: {
-    name: PAGE_MAIN,
-    path: PATH,
+  client: {
+    path: "/client",
     pageComponent: ClientPage,
-    isNeedAuth: false,
   },
 };
 
