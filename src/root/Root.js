@@ -2,12 +2,21 @@ import { hot } from "react-hot-loader/root";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Switch, withRouter } from "react-router-dom";
-import allRoutes from "./routes";
+import allRoutes from "../routes";
+import Cookie from "js-cookie";
+import tokenDecode from "../commons/utils/tokenDecode";
 
-const App = ({ history }) => {
+const Root = ({ history }) => {
   const routes = Object.values(allRoutes);
   const activeUser = useSelector(({ activeUser }) => activeUser.user);
   const activeUserLoading = useSelector(({ activeUser }) => activeUser.loading);
+
+  React.useEffect(() => {
+    const access = Cookie.get("access");
+    if (access) {
+      console.log(tokenDecode(access));
+    }
+  }, []);
 
   // React.useEffect(() => {
   //   !!activeUser && !activeUserLoading && !!activeUser.id
@@ -30,4 +39,4 @@ const App = ({ history }) => {
   );
 };
 
-export default hot(withRouter(App));
+export default hot(withRouter(Root));
