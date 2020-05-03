@@ -37,7 +37,7 @@ const commonConfig = {
         },
       },
       {
-        test: /\.(svg|png|jpe?g|gif)$/i,
+        test: /\.(svg|png|jpe?g|gif|ico)$/i,
         use: [
           {
             loader: "file-loader",
