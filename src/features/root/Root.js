@@ -1,13 +1,20 @@
+// @flow
+
 import { hot } from "react-hot-loader/root";
-import React from "react";
+import React, { type Node } from "react";
 import Wrapper from "./components/Wrapper";
 import Favicon from "react-favicon";
-import icon from "./img/favicon.ico";
+import { favicon } from "./img";
 
-const Root = () => {
+type Props = {
+  some: string,
+};
+
+const Root = ({ some }: Props): Node => {
   return (
     <Wrapper>
-      <Favicon url={icon} />
+      <Favicon url={favicon} />
+      This is root {some}
     </Wrapper>
   );
 };
