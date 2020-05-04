@@ -13,13 +13,10 @@ export const getCurrentWeatherByCityName = async (cityName) => {
   }
 };
 
-`https://api.openweathermap.org/data/2.5/onecall?lat=60.99&lon=30.9&exclude=hourly,daily&appid={YOUR API KEY}`
-
-export const getForecastWeatherByCityId = async (cityId, cnt) => {
-  // `api.openweathermap.org/data/2.5/forecast/daily?id=${cityId}&cnt=${cnt}&appid=${apiKey}`
+export const getForecastWeatherByCoords = async (coords) => {
   try {
     const res = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast/daily?id=524901&lang=zh_cn&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/onecall?${coords}&exclude=hourly,current&appid=${apiKey}`
     );
     return res.data;
   } catch (error) {

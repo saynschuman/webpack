@@ -7,7 +7,7 @@ import Favicon from "react-favicon";
 import { favicon } from "./img";
 import {
   getCurrentWeatherByCityName,
-  getForecastWeatherByCityId,
+  getForecastWeatherByCoords,
 } from "../../commons/api";
 
 type Props = {
@@ -17,7 +17,7 @@ type Props = {
 const Root = ({ some }: Props): Node => {
   const getWeather = async () => {
     // return getCurrentWeatherByCityName("Cherkasy");
-    return getForecastWeatherByCityId("524901", "3");
+    return getForecastWeatherByCoords("lat=60.99&lon=30.9");
   };
   React.useEffect(() => {
     getWeather().then((res) => console.log(res));
