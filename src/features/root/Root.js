@@ -7,21 +7,24 @@ import Favicon from "react-favicon";
 import { favicon } from "./img";
 import { Switch, Route } from "react-router-dom";
 import { routesList } from "../routes";
+import { Container } from "reactstrap";
 
 const Root = (): Node => {
   React.useEffect(() => {}, []);
   return (
     <Wrapper>
       <Favicon url={favicon} />
-      <Switch>
-        {routesList.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            component={route.component}
-          />
-        ))}
-      </Switch>
+      <Container>
+        <Switch>
+          {routesList.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              component={route.component}
+            />
+          ))}
+        </Switch>
+      </Container>
     </Wrapper>
   );
 };
