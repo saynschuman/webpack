@@ -10,7 +10,6 @@ import { routesList } from "../routes";
 import { Container } from "reactstrap";
 
 const Root = (): Node => {
-  React.useEffect(() => {}, []);
   return (
     <Wrapper>
       <Favicon url={favicon} />

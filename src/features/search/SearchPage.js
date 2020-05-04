@@ -12,14 +12,18 @@ import {
 } from "reactstrap";
 import { FaSearchLocation } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getCurrentWeatherStart } from "./actions";
 
 const SearchPage = () => {
+  const dispatch = useDispatch();
   const [city, setCity] = React.useState("");
   const onChange = (e) => {
     setCity(e.target.value);
   };
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch(getCurrentWeatherStart(city));
   };
   return (
     <Card>
