@@ -6,6 +6,7 @@ import WeatherLoading from "../../commons/components/WeatherLoading";
 import WeatherError from "../../commons/components/WeatherError";
 import HomePageButton from "../../commons/components/HomePageButton";
 import CardWeather from "./components/CardWeather";
+import { Link } from "react-router-dom";
 
 const CityPage = () => {
   const dispatch = useDispatch();
@@ -30,8 +31,11 @@ const CityPage = () => {
     <Card>
       <CardHeader>
         <ListGroup>
-          <ListGroupItem className="text-center p-b">
+          <ListGroupItem className="d-flex justify-content-between">
             <strong>Recent Days Weather</strong>
+            <Link className="" to="/">
+              ← go back
+            </Link>
           </ListGroupItem>
         </ListGroup>
       </CardHeader>

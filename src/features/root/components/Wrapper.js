@@ -16,4 +16,7 @@ export default styled.div`
   .alert {
     margin-bottom: 0;
   }
+  a:hover {
+    text-decoration: none;
+  }
 `;
