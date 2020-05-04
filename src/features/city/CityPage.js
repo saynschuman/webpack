@@ -12,8 +12,9 @@ import WeatherItem from "../search/components/WeatherItem";
 import getDescription from "../search/utils/getDescription";
 import WeatherLoading from "../../commons/components/WeatherLoading";
 import WeatherError from "../../commons/components/WeatherError";
+import HomePageButton from "../../commons/components/HomePageButton";
 
-const CityPage = ({}) => {
+const CityPage = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     const coords = window.location.search.replace("?", "");
@@ -25,7 +26,10 @@ const CityPage = ({}) => {
   if (loading) return <WeatherLoading />;
   if (error)
     return (
-      <WeatherError errorText="Sorry, city not found.. please try again" />
+      <>
+        <WeatherError errorText="Sorry, city not found." />
+        <HomePageButton>Try Again</HomePageButton>
+      </>
     );
   if (!recentWeather) return null;
   const { daily } = recentWeather;
