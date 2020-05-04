@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroupItem } from "reactstrap";
-import PropTypes from "prop-types";
+import PropTypes from "prop-types/prop-types";
 
 const WeatherItem = ({ label, data }) => {
   return (
@@ -13,7 +13,11 @@ const WeatherItem = ({ label, data }) => {
 
 WeatherItem.propTypes = {
   label: PropTypes.string,
-  data: PropTypes.string,
+  data: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.func,
+  ]),
 };
 
 export default WeatherItem;

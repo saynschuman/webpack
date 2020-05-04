@@ -2,7 +2,7 @@ import React from "react";
 import { CardBody, ListGroup } from "reactstrap";
 import WeatherItem from "../../search/components/WeatherItem";
 import getDescription from "../../search/utils/getDescription";
-import PropTypes from "prop-types";
+import PropTypes from "prop-types/prop-types";
 
 const CardWeather = ({ day }) => {
   return (
@@ -26,7 +26,7 @@ const CardWeather = ({ day }) => {
 CardWeather.propTypes = {
   day: PropTypes.shape({
     dt: PropTypes.number,
-    weather: PropTypes.number,
+    weather: PropTypes.Array,
     sunrise: PropTypes.number,
     sunset: PropTypes.number,
     pressure: PropTypes.number,

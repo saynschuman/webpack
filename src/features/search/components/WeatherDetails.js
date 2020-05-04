@@ -2,7 +2,7 @@ import React from "react";
 import { CardBody, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import qs from "qs";
-import PropTypes from "prop-types";
+import PropTypes from "prop-types/prop-types";
 import WeatherItem from "./WeatherItem";
 import getDescription from "../utils/getDescription";
 import WeatherLoading from "../../../commons/components/WeatherLoading";
@@ -46,14 +46,15 @@ WeatherDetails.propTypes = {
       lon: PropTypes.number,
       lat: PropTypes.number,
     }),
-    weather: PropTypes.array([
-      {
-        id: PropTypes.number,
-        main: PropTypes.string,
-        description: PropTypes.string,
-        icon: PropTypes.string,
-      },
-    ]),
+    weather:
+      PropTypes.arrayOf[
+        {
+          id: PropTypes.number,
+          main: PropTypes.string,
+          description: PropTypes.string,
+          icon: PropTypes.string,
+        }
+      ],
     main: PropTypes.shape({
       temp: PropTypes.number,
       feels_like: PropTypes.number,
@@ -63,7 +64,7 @@ WeatherDetails.propTypes = {
       humidity: PropTypes.number,
     }),
     visibility: PropTypes.number,
-    wind: { speed: PropTypes.number, deg: PropTypes.number },
+    wind: PropTypes.shape({ speed: PropTypes.number, deg: PropTypes.number }),
     dt: PropTypes.number,
     sys: PropTypes.shape({
       type: PropTypes.number,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import PropTypes from "prop-types/prop-types";
 
 const HomePageButton = ({ children }) => {
   return (
