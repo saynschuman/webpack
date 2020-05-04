@@ -5,7 +5,10 @@ import React, { type Node } from "react";
 import Wrapper from "./components/Wrapper";
 import Favicon from "react-favicon";
 import { favicon } from "./img";
-import { getWeatherByCityName } from "../../commons/api";
+import {
+  getCurrentWeatherByCityName,
+  getForecastWeatherByCityId,
+} from "../../commons/api";
 
 type Props = {
   some: string,
@@ -13,7 +16,8 @@ type Props = {
 
 const Root = ({ some }: Props): Node => {
   const getWeather = async () => {
-    return getWeatherByCityName("Cherkasy");
+    // return getCurrentWeatherByCityName("Cherkasy");
+    return getForecastWeatherByCityId("524901", "3");
   };
   React.useEffect(() => {
     getWeather().then((res) => console.log(res));
