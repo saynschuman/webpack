@@ -1,10 +1,10 @@
 import React from "react";
 import { Alert, CardBody } from "reactstrap";
 
-const WeatherError = () => {
+const WeatherError = ({ errorText }: { errorText: string }) => {
   return (
     <CardBody className="text-center">
-      <Alert color="danger">Sorry, city not found.. please try again</Alert>
+      <Alert color="danger">{errorText}</Alert>
     </CardBody>
   );
 };

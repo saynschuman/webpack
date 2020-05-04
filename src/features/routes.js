@@ -13,6 +13,10 @@ export const routesList: Array<RouteData> = [
     component: CityPage,
   },
   {
+    path: routerPaths.CITY_PAGE,
+    component: CityPage,
+  },
+  {
     path: routerPaths.SEARCH_PAGE,
     component: SearchPage,
   },

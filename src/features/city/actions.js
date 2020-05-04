@@ -1,8 +1,8 @@
 import { GET_RECENT_WEATHER } from "./reducer";
 
-export const getRecentWeatherStart = (payload) => ({
+export const getRecentWeatherStart = (coords) => ({
   type: GET_RECENT_WEATHER + "_START",
-  payload,
+  coords,
 });
 
 export const getRecentWeatherSuccess = (payload) => ({

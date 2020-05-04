@@ -4,8 +4,8 @@ import { GET_RECENT_WEATHER } from "./reducer";
 import { getForecastWeatherByCoords } from "../../commons/api";
 
 export function* dataWorker(data) {
-  const { payload } = data;
-  const res = yield getForecastWeatherByCoords(payload.coords);
+  const { coords } = data;
+  const res = yield getForecastWeatherByCoords(coords);
   if (!res.error) {
     yield put(actions.getRecentWeatherSuccess(res));
   } else {
