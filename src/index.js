@@ -12,7 +12,7 @@ render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Root some={"some"} />
+        <Root />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

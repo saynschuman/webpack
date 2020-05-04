@@ -1,7 +1,9 @@
 import React from "react";
+import { withRouter } from "react-router";
 
-const CityPage = () => {
+const CityPage = ({ match }) => {
+  console.log(match);
   return <div>CityPage</div>;
 };
 
-export default CityPage;
+export default withRouter(CityPage);
