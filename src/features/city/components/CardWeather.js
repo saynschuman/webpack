@@ -3,15 +3,16 @@ import { CardBody, ListGroup } from "reactstrap";
 import WeatherItem from "../../search/components/WeatherItem";
 import getDescription from "../../search/utils/getDescription";
 import PropTypes from "prop-types/prop-types";
+import getTime from "../../../commons/utils/getTime";
 
 const CardWeather = ({ day }) => {
   return (
     <CardBody>
       <ListGroup>
-        <WeatherItem label="date" data={day.dt} />
+        <WeatherItem label="date" data={getTime(day.dt)} />
         <WeatherItem label="weather" data={getDescription(day.weather)} />
-        <WeatherItem label="sunrise" data={day.sunrise} />
-        <WeatherItem label="sunset" data={day.sunset} />
+        <WeatherItem label="sunrise" data={getTime(day.sunrise)} />
+        <WeatherItem label="sunset" data={getTime(day.sunset)} />
         <WeatherItem label="pressure" data={day.pressure} />
         <WeatherItem label="humidity" data={day.humidity} />
         <WeatherItem label="dew_point" data={day.dew_point} />
