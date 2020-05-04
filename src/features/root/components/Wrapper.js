@@ -10,4 +10,10 @@ export default styled.div`
   textarea {
     font-family: sans-serif;
   }
+  .form-group {
+    margin: 0;
+  }
+  .alert {
+    margin-bottom: 0;
+  }
 `;

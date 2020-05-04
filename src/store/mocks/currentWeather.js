@@ -1,0 +1,30 @@
+export default {
+  coord: { lon: 26.12, lat: 54.36 },
+  weather: [
+    { id: 804, main: "Clouds", description: "overcast clouds", icon: "04d" },
+  ],
+  base: "stations",
+  main: {
+    temp: 287.15,
+    feels_like: 284.57,
+    temp_min: 287.15,
+    temp_max: 287.15,
+    pressure: 1014,
+    humidity: 47,
+  },
+  visibility: 10000,
+  wind: { speed: 1.5, deg: 330 },
+  clouds: { all: 94 },
+  dt: 1588608156,
+  sys: {
+    type: 1,
+    id: 1883,
+    country: "BY",
+    sunrise: 1588559453,
+    sunset: 1588614814,
+  },
+  timezone: 10800,
+  id: 630515,
+  name: "Черкасы",
+  cod: 200,
+};
