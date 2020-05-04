@@ -30,7 +30,7 @@ const SearchPage = () => {
               value={city}
               placeholder="Search city"
               onChange={onChange}
-              autocomplete="off"
+              autoComplete="off"
             />
             <Button className="w-25 ml-2">
               <FaSearchLocation />
