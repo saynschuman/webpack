@@ -1,4 +1,3 @@
-import { RouteData } from "../types";
 import CityPage from "../features/city/CityPage";
 import SearchPage from "../features/search/SearchPage";
 
@@ -7,7 +6,7 @@ export const routerPaths = {
   SEARCH_PAGE: "/",
 };
 
-export const routesList: Array<RouteData> = [
+export const routesList = [
   {
     path: routerPaths.CITY_PAGE + "/:coords",
     component: CityPage,

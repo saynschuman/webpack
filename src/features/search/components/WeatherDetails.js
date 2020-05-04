@@ -1,15 +1,15 @@
 import React from "react";
 import { CardBody, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
-import { CurrentWeather } from "../../../types";
+import qs from "qs";
+import PropTypes from "prop-types";
 import WeatherItem from "./WeatherItem";
 import getDescription from "../utils/getDescription";
 import WeatherLoading from "../../../commons/components/WeatherLoading";
 import WeatherError from "../../../commons/components/WeatherError";
 import { routerPaths } from "../../routes";
-import qs from "qs";
 
-const WeatherDetails = ({ currentWeather, loading, error }: CurrentWeather) => {
+const WeatherDetails = ({ currentWeather, loading, error }) => {
   if (loading) return <WeatherLoading />;
   if (error)
     return (
@@ -38,6 +38,46 @@ const WeatherDetails = ({ currentWeather, loading, error }: CurrentWeather) => {
       </ListGroup>
     </CardBody>
   );
+};
+
+WeatherDetails.propTypes = {
+  currentWeather: PropTypes.shape({
+    coord: PropTypes.shape({
+      lon: PropTypes.number,
+      lat: PropTypes.number,
+    }),
+    weather: PropTypes.array([
+      {
+        id: PropTypes.number,
+        main: PropTypes.string,
+        description: PropTypes.string,
+        icon: PropTypes.string,
+      },
+    ]),
+    main: PropTypes.shape({
+      temp: PropTypes.number,
+      feels_like: PropTypes.number,
+      temp_min: PropTypes.number,
+      temp_max: PropTypes.number,
+      pressure: PropTypes.number,
+      humidity: PropTypes.number,
+    }),
+    visibility: PropTypes.number,
+    wind: { speed: PropTypes.number, deg: PropTypes.number },
+    dt: PropTypes.number,
+    sys: PropTypes.shape({
+      type: PropTypes.number,
+      id: PropTypes.number,
+      country: PropTypes.string,
+      sunrise: PropTypes.number,
+      sunset: PropTypes.number,
+    }),
+    timezone: PropTypes.number,
+    id: PropTypes.number,
+    name: PropTypes.string,
+  }),
+  loading: PropTypes.bool,
+  error: PropTypes.bool,
 };
 
 export default WeatherDetails;

@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  ListGroupItem,
-  ListGroup,
-} from "reactstrap";
+import { Card, CardHeader, ListGroupItem, ListGroup } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecentWeatherStart } from "./actions";
-import WeatherItem from "../search/components/WeatherItem";
-import getDescription from "../search/utils/getDescription";
 import WeatherLoading from "../../commons/components/WeatherLoading";
 import WeatherError from "../../commons/components/WeatherError";
 import HomePageButton from "../../commons/components/HomePageButton";
+import CardWeather from "./components/CardWeather";
 
 const CityPage = () => {
   const dispatch = useDispatch();
@@ -42,21 +35,8 @@ const CityPage = () => {
           </ListGroupItem>
         </ListGroup>
       </CardHeader>
-      {daily.map((el) => (
-        <CardBody>
-          <ListGroup>
-            <WeatherItem label="date" data={el.dt} />
-            <WeatherItem label="weather" data={getDescription(el.weather)} />
-            <WeatherItem label="sunrise" data={el.sunrise} />
-            <WeatherItem label="sunset" data={el.sunset} />
-            <WeatherItem label="pressure" data={el.pressure} />
-            <WeatherItem label="humidity" data={el.humidity} />
-            <WeatherItem label="dew_point" data={el.dew_point} />
-            <WeatherItem label="wind_speed" data={el.wind_speed} />
-            <WeatherItem label="wind_deg" data={el.wind_deg} />
-            <WeatherItem label="clouds" data={el.clouds} />
-          </ListGroup>
-        </CardBody>
+      {daily.map((day) => (
+        <CardWeather day={day} />
       ))}
     </Card>
   );

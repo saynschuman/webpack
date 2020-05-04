@@ -11,8 +11,9 @@ const SearchPage = () => {
   const loading = useSelector(({ search }) => search.loading);
   const error = useSelector(({ search }) => search.error);
   const [city, setCity] = React.useState("");
-  const onChange = (e) => {
-    setCity(e.target.value);
+  const onChange = ({ target }) => {
+    const { value } = target;
+    setCity(value);
   };
   const onSubmit = (e) => {
     e.preventDefault();

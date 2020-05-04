@@ -1,7 +1,5 @@
-// @flow
-
 import { hot } from "react-hot-loader/root";
-import React, { type Node } from "react";
+import React from "react";
 import Wrapper from "./components/Wrapper";
 import Favicon from "react-favicon";
 import { favicon } from "./img";
@@ -9,7 +7,7 @@ import { Switch, Route } from "react-router-dom";
 import { routesList } from "../routes";
 import { Container } from "reactstrap";
 
-const Root = (): Node => {
+const Root = () => {
   return (
     <Wrapper>
       <Favicon url={favicon} />
