@@ -1,4 +1,4 @@
-import { put, takeLatest, all } from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 import * as actions from "./actions";
 import { GET_CURRENT_WEATHER } from "./reducer";
 import { getCurrentWeatherByCityName } from "../../commons/api";
@@ -14,5 +14,5 @@ export function* dataWorker(data) {
 }
 
 export default function* watcher() {
-  yield all([takeLatest(GET_CURRENT_WEATHER + "_START", dataWorker)]);
+  yield takeLatest(GET_CURRENT_WEATHER + "_START", dataWorker);
 }

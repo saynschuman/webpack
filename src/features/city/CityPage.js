@@ -32,7 +32,7 @@ const CityPage = () => {
       <CardHeader>
         <ListGroup>
           <ListGroupItem className="d-flex justify-content-between">
-            <strong>Next Days Weather</strong>
+            <strong>NextDays Weather</strong>
             <Link className="" to="/">
               ← go back
             </Link>
