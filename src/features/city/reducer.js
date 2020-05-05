@@ -1,11 +1,12 @@
 import { Record } from "immutable";
+import { selectRecentData } from "./normalize";
 
 export const GET_RECENT_WEATHER = "GET_RECENT_WEATHER";
 
 const ReducerRecord = Record({
   loading: false,
   loaded: false,
-  recentWeather: null,
+  recentWeather: [],
   error: false,
 });
 
@@ -21,7 +22,7 @@ export default (state = new ReducerRecord(), action) => {
         .set("error", false)
         .set("loading", false)
         .set("loaded", true)
-        .set("recentWeather", action.payload);
+        .set("recentWeather", selectRecentData(action.payload));
     case GET_RECENT_WEATHER + "_ERROR":
       return state
         .set("error", true)

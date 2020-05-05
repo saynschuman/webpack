@@ -26,7 +26,6 @@ const CityPage = () => {
       </>
     );
   if (!recentWeather) return null;
-  const { daily } = recentWeather;
   return (
     <Card>
       <CardHeader>
@@ -39,9 +38,9 @@ const CityPage = () => {
           </ListGroupItem>
         </ListGroup>
       </CardHeader>
-      {!!daily &&
-        Array.isArray(daily) &&
-        daily.map((day) => <CardWeather key={day.dt} day={day} />)}
+      {!!recentWeather &&
+        Array.isArray(recentWeather) &&
+        recentWeather.map((day) => <CardWeather key={day.dt} day={day} />)}
     </Card>
   );
 };

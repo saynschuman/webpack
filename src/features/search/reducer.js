@@ -1,6 +1,5 @@
 import { Record } from "immutable";
 import { selectWeatherData } from "./normalize";
-import { currentWeather } from "../../store/mocks";
 
 export const GET_CURRENT_WEATHER = "GET_CURRENT_WEATHER";
 
@@ -23,7 +22,7 @@ export default (state = new ReducerRecord(), action) => {
         .set("error", false)
         .set("loading", false)
         .set("loaded", true)
-        .set("currentWeather", selectWeatherData(currentWeather));
+        .set("currentWeather", selectWeatherData(action.payload));
     case GET_CURRENT_WEATHER + "_ERROR":
       return state
         .set("error", true)
