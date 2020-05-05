@@ -28,7 +28,7 @@ export default (state = new ReducerRecord(), action) => {
         .set("error", true)
         .set("loading", false)
         .set("loaded", false)
-        .set("recentWeather", null);
+        .set("recentWeather", []);
     default:
       return state;
   }
