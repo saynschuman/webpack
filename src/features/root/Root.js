@@ -2,7 +2,6 @@ import { hot } from "react-hot-loader/root";
 import React from "react";
 import Wrapper from "./components/Wrapper";
 import Favicon from "react-favicon";
-import { favicon } from "./img";
 import { Switch, Route } from "react-router-dom";
 import { routesList } from "../routes";
 import { Container } from "reactstrap";
@@ -10,7 +9,7 @@ import { Container } from "reactstrap";
 const Root = () => {
   return (
     <Wrapper>
-      <Favicon url={favicon} />
+      <Favicon url="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-showers-day-icon.png" />
       <Container>
         <Switch>
           {routesList.map((route) => (
