@@ -32,7 +32,7 @@ const WeatherDetails = ({ currentWeather, loading, error }) => {
         <WeatherItem label="City" data={name} />
         <WeatherItem label="Description" data={description} />
         <WeatherItem label="Temp" data={temp} />
-        <WeatherItem label="Wind speed" data={`${wind_speed} m/s`} />
+        <WeatherItem label="Wind speed" data={wind_speed} />
         <WeatherItem label="Wind deg" data={`${wind_deg}`} />
         <Link to={link}>
           <ListGroupItem className="text-center">

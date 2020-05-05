@@ -23,7 +23,7 @@ export default (state = new ReducerRecord(), action) => {
         .set("error", false)
         .set("loading", false)
         .set("loaded", true)
-        .set("currentWeather", selectWeatherData(action.payload));
+        .set("currentWeather", selectWeatherData(currentWeather));
     case GET_CURRENT_WEATHER + "_ERROR":
       return state
         .set("error", true)

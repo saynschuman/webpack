@@ -3,6 +3,7 @@ import { ListGroupItem } from "reactstrap";
 import PropTypes from "prop-types/prop-types";
 
 const WeatherItem = ({ label, data }) => {
+  if (!data) return null;
   return (
     <ListGroupItem className="d-flex justify-content-between">
       <span>{label}:</span>
