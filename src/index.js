@@ -9,12 +9,10 @@ import { BrowserRouter } from "react-router-dom";
 store.runSaga(rootSaga);
 
 render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <Root />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Root />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
