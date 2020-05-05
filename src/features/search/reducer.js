@@ -1,28 +1,13 @@
 import { Record } from "immutable";
+import { selectWeatherData } from "./normalize";
+import { currentWeather } from "../../store/mocks";
 
 export const GET_CURRENT_WEATHER = "GET_CURRENT_WEATHER";
 
 const ReducerRecord = Record({
   loading: false,
   loaded: false,
-  currentWeather: {
-    coord: { lon: 32.06, lat: 49.43 },
-    weather: [
-      { id: 500, main: "Rain", description: "light rain", icon: "10d" },
-    ],
-    main: {
-      temp: 290.34,
-      feels_like: 290.42,
-      temp_min: 290.34,
-      temp_max: 290.34,
-      pressure: 1008,
-      humidity: 72,
-      sea_level: 1008,
-      grnd_level: 996,
-    },
-    wind: { speed: 0.81, deg: 341 },
-    name: "Cherkasy",
-  },
+  currentWeather: null,
   error: false,
 });
 
@@ -38,7 +23,7 @@ export default (state = new ReducerRecord(), action) => {
         .set("error", false)
         .set("loading", false)
         .set("loaded", true)
-        .set("currentWeather", action.payload);
+        .set("currentWeather", selectWeatherData(action.payload));
     case GET_CURRENT_WEATHER + "_ERROR":
       return state
         .set("error", true)
