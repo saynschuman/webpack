@@ -39,7 +39,7 @@ const CityPage = () => {
           </ListGroupItem>
         </ListGroup>
       </CardHeader>
-      {daily.map((day) => (
+      {!!daily ?? Array.isArray(daily) && daily.map((day) => (
         <CardWeather key={day.dt} day={day} />
       ))}
     </Card>
