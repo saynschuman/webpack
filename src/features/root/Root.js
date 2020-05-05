@@ -9,7 +9,7 @@ import { Container } from "reactstrap";
 const Root = () => {
   return (
     <Wrapper>
-      <Favicon url="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-showers-day-icon.png" />
+      <Favicon url="/" />
       <Container>
         <Switch>
           {routesList.map((route) => (
