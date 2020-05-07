@@ -1,7 +1,7 @@
 import { put, takeLatest } from "redux-saga/effects";
 import * as actions from "./actions";
 import { GET_CURRENT_WEATHER } from "./reducer";
-import { getCurrentWeatherByCityName } from "../../commons/api";
+import { getCurrentWeatherByCityName } from "@/commons/api";
 
 export function* dataWorker(data) {
   const { cityName } = data;

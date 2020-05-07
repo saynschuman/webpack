@@ -12,7 +12,7 @@ const commonConfig = {
   },
   resolve: {
     alias: {
-      src: paths.absolute.src,
+      "@": paths.absolute.src,
     },
     extensions: [".js", ".jsx", ".scss", ".css"],
   },

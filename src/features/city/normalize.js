@@ -1,4 +1,4 @@
-import getNested from "../../commons/utils/getNested";
+import getNested from "@/commons/utils/getNested";
 
 export const selectRecentData = (data) => {
   const daily = getNested(data, "daily");

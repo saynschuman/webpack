@@ -3,7 +3,7 @@ import React from "react";
 import Wrapper from "./components/Wrapper";
 import Favicon from "react-favicon";
 import { Switch, Route } from "react-router-dom";
-import { routesList } from "../routes";
+import { routesList } from "@/features/routes";
 import { Container } from "reactstrap";
 
 const Root = () => {

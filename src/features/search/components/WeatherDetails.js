@@ -3,8 +3,8 @@ import { CardBody, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types/prop-types";
 import WeatherItem from "./WeatherItem";
-import WeatherLoading from "../../../commons/components/WeatherLoading";
-import WeatherError from "../../../commons/components/WeatherError";
+import WeatherLoading from "@/commons/components/WeatherLoading";
+import WeatherError from "@/commons/components/WeatherError";
 import getCityPageLink from "../utils/getCityPageLink";
 
 const WeatherDetails = ({ currentWeather, loading, error }) => {

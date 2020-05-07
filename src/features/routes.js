@@ -1,5 +1,5 @@
-import CityPage from "../features/city/CityPage";
-import SearchPage from "../features/search/SearchPage";
+import CityPage from "@/features/city/CityPage";
+import SearchPage from "@/features/search/SearchPage";
 
 export const routerPaths = {
   CITY_PAGE: "/city-page",

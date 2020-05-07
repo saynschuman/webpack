@@ -1,9 +1,9 @@
 import React from "react";
 import { CardBody, ListGroup } from "reactstrap";
-import WeatherItem from "../../search/components/WeatherItem";
-import getDescription from "../../search/utils/getDescription";
+import WeatherItem from "@/features/search/components/WeatherItem";
+import getDescription from "@/features/search/utils/getDescription";
 import PropTypes from "prop-types/prop-types";
-import getTime from "../../../commons/utils/getTime";
+import getTime from "@/commons/utils/getTime";
 
 const CardWeather = ({ day }) => {
   return (

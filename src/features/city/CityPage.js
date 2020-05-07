@@ -2,9 +2,9 @@ import React from "react";
 import { Card, CardHeader, ListGroupItem, ListGroup } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecentWeatherStart } from "./actions";
-import WeatherLoading from "../../commons/components/WeatherLoading";
-import WeatherError from "../../commons/components/WeatherError";
-import HomePageButton from "../../commons/components/HomePageButton";
+import WeatherLoading from "@/commons/components/WeatherLoading";
+import WeatherError from "@/commons/components/WeatherError";
+import HomePageButton from "@/commons/components/HomePageButton";
 import CardWeather from "./components/CardWeather";
 import { Link } from "react-router-dom";
 

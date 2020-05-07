@@ -1,5 +1,5 @@
-import getNested from "../../commons/utils/getNested";
-import checkType from "../../commons/utils/checkType";
+import getNested from "@/commons/utils/getNested";
+import checkType from "@/commons/utils/checkType";
 import getDescription from "./utils/getDescription";
 
 export const selectWeatherData = (data) => {

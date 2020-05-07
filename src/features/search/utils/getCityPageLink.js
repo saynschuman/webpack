@@ -1,4 +1,4 @@
-import { routerPaths } from "../../routes";
+import { routerPaths } from "@/features/routes";
 import qs from "qs";
 
 export default (coord) => {
